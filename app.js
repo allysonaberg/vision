@@ -57,3 +57,7 @@ var params = {
 client.detect(params).then(function(result) {
   console.log("RESULT: " + JSON.stringify(result, null, 2))
 })
+function base64_encode(form) {
+  var bitmap = fs.readFileSync(form);
+  return new Buffer(bitmap.toString('base64'))
+} 
