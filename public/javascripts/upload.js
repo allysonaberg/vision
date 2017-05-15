@@ -1,3 +1,11 @@
+var express = require('express');
+var app = express();
+var path = require('path');
+var formidable = require('formidable');
+var fs = require('fs');
+const app = require( "~/app" )
+
+
 $('.upload-btn').on('click', function (){
     $('#upload-input').click();
     $('.progress-bar').text('0%');
@@ -7,12 +15,9 @@ $('.upload-btn').on('click', function (){
 $('.check-btn').on('click', function (){
     $('#check-btn').click();
     $('.titlename').text('Clicked');
-
+    //app.detectLandmarks()
 });
 
-$('#check-btn').on('change', function() {
-  $('.titlename').html('Clicked');
-})
 $('#upload-input').on('change', function(){
 
   var files = $(this).get(0).files;
@@ -29,6 +34,8 @@ $('#upload-input').on('change', function(){
       // add the files to formData object for the data payload
       formData.append('uploads[]', file, file.name);
     }
+
+    //app.base64_encode(formData)
 
     $.ajax({
       url: '/upload',
@@ -57,9 +64,7 @@ $('#upload-input').on('change', function(){
 
             // once the upload reaches 100%, set the progress bar text to done
             if (percentComplete === 100) {
-              //$('.progress-bar').html('Done');
-                $('.progress-bar').html('Clicked');
-
+              $('.progress-bar').html('Done');
             }
 
           }

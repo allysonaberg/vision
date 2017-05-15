@@ -4,6 +4,7 @@ var path = require('path');
 var formidable = require('formidable');
 var fs = require('fs');
 
+var base64encoded
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res){
@@ -54,10 +55,18 @@ var params = {
   image: 'http://media.kairos.com/kairos-elizabeth.jpg',
 };
 
+//function detectLandmarks() {
 client.detect(params).then(function(result) {
   console.log("RESULT: " + JSON.stringify(result, null, 2))
 })
-function base64_encode(form) {
-  var bitmap = fs.readFileSync(form);
-  return new Buffer(bitmap.toString('base64'))
-} 
+//}
+// function base64_encode(form) {
+//   var bitmap = fs.readFileSync(form);
+//   base64encoded = bitmap.toString('base64')
+//   //return new Buffer(bitmap.toString('base64'))
+// } 
+
+// module.exports = {
+//   base64_encode: base64_encode,
+//   detectLandmarks: detectLandmarks
+// }

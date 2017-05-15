@@ -5,7 +5,7 @@
 html,
 body {
   height: 100%;
-  background-color: #4791D2;
+  background-color: #d9534f;
 }
 
 body {
@@ -17,18 +17,22 @@ body {
   margin-top: 80px;
 }
 
-.upload-btn {
+.upload-btn, .check-btn {
   color: #ffffff;
-  background-color: #F89406;
+  background-color: #000000;
   border: none;
 }
 
 .upload-btn:hover,
 .upload-btn:focus,
 .upload-btn:active,
-.upload-btn.active {
+.upload-btn.active,
+.check-btn:hover,
+.check-btn:focus,
+.check-btn:active,
+.check-btn.active {
   color: #ffffff;
-  background-color: #FA8900;
+  background-color: #d9534f;
   border: none;
 }
 
